@@ -12,15 +12,33 @@ class Reserved extends StatelessWidget{
           appBar: new AppBar(
             title: new Text("Reserve a table"),
           ),
-          body:new Center(
-            child: new Text("Center"),
+          body: new HomeWidget(),
             ),
 
         ),
-      ),
-    );
+      );
     }
 }
 
+class HomeWidget extends StatelessWidget{
+@override
+  Widget build(BuildContext context) {
+    return new ListView.builder(
+      itemCount: 20, 
+      itemBuilder: (context, rowNumber){
+        return new Column(
+          children: <Widget>[
+            new Text("test1 $rowNumber"),
+            new Text("test2 $rowNumber"),
+            new Divider()
+          ],
+        );
 
+      },
+
+    );
+   
+    }
+
+}
  
