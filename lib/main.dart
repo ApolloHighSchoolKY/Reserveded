@@ -7,7 +7,9 @@ class Reserved extends StatelessWidget{
   Widget build(BuildContext context) {
     return new MaterialApp(
       title:"Reserved",
-      home: new Center(
+      home: new LoginButton()
+       /*new Center( 
+
         child: new Scaffold(
           appBar: new AppBar(
             title: new Text("Reserve a table"),
@@ -15,10 +17,12 @@ class Reserved extends StatelessWidget{
           body: new HomeWidget(),
             ),
 
-        ),
+        ), */
       );
+
     }
 }
+
 
 class HomeWidget extends StatelessWidget{
 @override
@@ -42,3 +46,33 @@ class HomeWidget extends StatelessWidget{
 
 }
  
+ class LoginButton extends StatefulWidget{
+   @override
+    LoginButtonState createState() => new LoginButtonState();
+
+ }
+
+ class LoginButtonState extends State<LoginButton>{
+   @override
+    Widget build(BuildContext context){
+      return new Scaffold(
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text("Login"),
+                new RaisedButton(
+                  child: new Text("Login"),
+                  color: Colors.red,
+                  onPressed: null,
+
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+
+    }
+ }
