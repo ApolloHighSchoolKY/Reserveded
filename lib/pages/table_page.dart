@@ -4,8 +4,16 @@ import 'package:flutter/material.dart';
 class TablePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return new Material(
-
+    return new Scaffold(
+      body: new Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("luketable.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: null /* add child content here */,
+      ),
     );
   }
 }

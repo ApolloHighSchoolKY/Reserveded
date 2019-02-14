@@ -61,7 +61,6 @@ class HomeWidget extends StatelessWidget{
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text("Login"),
                 new RaisedButton(
                   child: new Text("Login"),
                   color: Colors.red,
