@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './pages/home_page.dart';
 
 void main() => runApp(Reserved());
 
@@ -7,7 +8,9 @@ class Reserved extends StatelessWidget{
   Widget build(BuildContext context) {
     return new MaterialApp(
       title:"Reserved",
-      home: new LoginButton()
+      home: new HomePage(
+
+      ),
        /*new Center( 
 
         child: new Scaffold(
@@ -15,10 +18,11 @@ class Reserved extends StatelessWidget{
             title: new Text("Reserve a table"),
           ),
           body: new HomeWidget(),
-            ),
+            ), //hello
 
         ), */
-      );
+       );
+      
 
     }
 }
@@ -27,51 +31,12 @@ class Reserved extends StatelessWidget{
 class HomeWidget extends StatelessWidget{
 @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-      itemCount: 20, 
-      itemBuilder: (context, rowNumber){
-        return new Column(
-          children: <Widget>[
-            new Text("test1 $rowNumber"),
-            new Text("test2 $rowNumber"),
-            new Divider()
-          ],
-        );
-
-      },
-
-    );
-   
+    // TODO: implement build
+    return null;
+  }
+  
     }
 
-}
+
  
- class LoginButton extends StatefulWidget{
-   @override
-    LoginButtonState createState() => new LoginButtonState();
-
- }
-
- class LoginButtonState extends State<LoginButton>{
-   @override
-    Widget build(BuildContext context){
-      return new Scaffold(
-        body: new Container(
-          child: new Center(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new RaisedButton(
-                  child: new Text("Login"),
-                  color: Colors.red,
-                  onPressed: null,
-
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-
-    }
- }
+ 
