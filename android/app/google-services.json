@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "596269929114",
+    "firebase_url": "https://reservedv2-ea8d4.firebaseio.com",
+    "project_id": "reservedv2-ea8d4",
+    "storage_bucket": "reservedv2-ea8d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596269929114:android:97b2ec9eb6395162",
+        "android_client_info": {
+          "package_name": "com.example.reservedversion1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596269929114-n86hdb16mgu2g7qehheghpqc904ga5a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSNIM2mo1X5pdvvkiOSWydZtPO7C3VMdc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
