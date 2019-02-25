@@ -1,58 +1,84 @@
 import 'package:flutter/material.dart';
-//import 'table_page.dart';
+import 'table_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-final restaurantController = TextEditingController();
-final employeeController = TextEditingController();
+final emailInput = TextEditingController();
+final passwordInput = TextEditingController();
+final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+String _email, _password;
 
-/* This widget is the design of the first page*/
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget{
   @override
+  _LandingPageState createState() => new _LandingPageState();
+}
+/* This widget is the design of the first page*/
+class _LandingPageState extends State<LandingPage>{
+@override
   Widget build(BuildContext context){
-    return new Material(
-      child:Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+    return Form(
+      key: formKey,
+      child: Column(
         children: <Widget>[
-          new Container(
-            margin: const EdgeInsets.only(top: 100.0),
-          ),
-          new TextFormField(
-            style: new TextStyle(color: Colors.black, fontSize: 20.0),
-            controller: restaurantController,
-            decoration: InputDecoration(
-              hintText: 'Enter restaurant code'
+            Container(
+              margin: const EdgeInsets.only(top: 100.0),
             ),
-          ),
-          new Container(
-            margin: const EdgeInsets.only(top: 5.0),
-          ),
-          new TextFormField(
-            style: new TextStyle(color: Colors.black, fontSize: 20.0),
-            controller: employeeController,
-            decoration: InputDecoration(
-              hintText: 'Enter your employee code',
-              fillColor: Colors.black
+            TextFormField(
+              style: new TextStyle(color: Colors.black, fontSize: 20.0),
+              validator: (input) {
+                if(input.isEmpty){
+                  return "Please enter an email";
+                }
+              },
+              onSaved: (input) => _email = input,
+              controller: emailInput,
+              decoration: InputDecoration(
+                hintText: 'Enter employee email'
+              ),
+           ),
+            Container(
+              margin: const EdgeInsets.only(top: 5.0),
             ),
-          ),
-          new Container(
-            margin: const EdgeInsets.only(top: 20.0),
-          ),
-          new FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              checkLogin(restaurantController.text, employeeController.text);
-            },
-           )
+            TextFormField(
+              style: new TextStyle(color: Colors.black, fontSize: 20.0),
+              obscureText: true,
+              validator: (input) {
+                if(input.isEmpty){
+                  return "Please enter a password";
+                }
+              },
+              onSaved: (input) => _password = input,
+              controller: passwordInput,
+              decoration: InputDecoration(
+                hintText: 'Enter your password',
+                fillColor: Colors.black
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20.0),
+            ),
+            RaisedButton(
+              child: Text("Login"),
+              color: Colors.blueAccent,
+              onPressed: checkLogin,
+            )    
         ],
-      ),
+      )
     );
   }
 }
 
-void checkLogin(String restaurantCode, String employeeCode){
-  if(restaurantCode=="012345"){
-    if(employeeCode=="0123"){
+Future<void> checkLogin() async{
+  //This method uses Firebase to check if the user successfully logged in
+  final formState = formKey.currentState;
+  if(formState.validate()){
+    formState.save();
+    try{
+      FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+      new TablePage();
       print("Login Successful");
+    } catch(e){
+      print(e.message);
     }
   }
 }
