@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'table_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'home_page.dart';
 
-final emailInput = TextEditingController();
-final passwordInput = TextEditingController();
 final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 String _email, _password;
 
@@ -31,7 +28,6 @@ class _LandingPageState extends State<LandingPage>{
                 }
               },
               onSaved: (input) => _email = input,
-              controller: emailInput,
               decoration: InputDecoration(
                 hintText: 'Enter employee email'
               ),
@@ -48,7 +44,6 @@ class _LandingPageState extends State<LandingPage>{
                 }
               },
               onSaved: (input) => _password = input,
-              controller: passwordInput,
               decoration: InputDecoration(
                 hintText: 'Enter your password',
                 fillColor: Colors.black
@@ -66,19 +61,19 @@ class _LandingPageState extends State<LandingPage>{
       )
     );
   }
-}
-
-Future<void> checkLogin() async{
-  //This method uses Firebase to check if the user successfully logged in
-  final formState = formKey.currentState;
-  if(formState.validate()){
-    formState.save();
-    try{
-      FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
-      new TablePage();
-      print("Login Successful");
-    } catch(e){
-      print(e.message);
+  Future<void> checkLogin() async{
+  //This method uses Fir1176200ebase to check if the user successfully logged in
+    final formState = formKey.currentState;
+    if(formState.validate()){
+      formState.save();
+      try{
+        FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        print("Login Successful");
+      } catch(e){
+        print(e.message);
+      }
     }
   }
 }
+

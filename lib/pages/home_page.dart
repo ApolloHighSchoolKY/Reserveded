@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './other_page.dart';
+import 'table_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
 
             new UserAccountsDrawerHeader(
+              //style: new TextStyle(color: Colors.black),
               accountName: new Text("Brother Montgomery"),
               accountEmail: new Text("Brother@gmail.com"),
               currentAccountPicture: new GestureDetector(
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             new ListTile(
               title: new Text("First page"),
               trailing: new Icon(Icons.arrow_upward),
-              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder:(BuildContext context) => new OtherPage("First Page"))) ,
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
 
              new ListTile(
