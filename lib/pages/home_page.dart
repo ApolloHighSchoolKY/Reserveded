@@ -41,20 +41,19 @@ class _HomePageState extends State<HomePage> {
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
 
-             new ListTile(
+           new ListTile(
               title: new Text("Second page"),
               trailing: new Icon(Icons.arrow_right),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder:(BuildContext context) => new OtherPage("Second Page"))) ,
-              ),
+            ),
+            
+            new Divider(),
 
-              new Divider(),
-
-              new ListTile(
+            new ListTile(
               title: new Text("Close"),
               trailing: new Icon(Icons.cancel),
               onTap: () => Navigator.of(context).pop(),
-              )
-
+            )
           ],
         ),
       ),
@@ -62,7 +61,5 @@ class _HomePageState extends State<HomePage> {
         child: new Text("HomePage"),
       ),
     );
-      
-    
   }
 }

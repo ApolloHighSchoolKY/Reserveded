@@ -62,7 +62,7 @@ class _LandingPageState extends State<LandingPage>{
     );
   }
   Future<void> checkLogin() async{
-  //This method uses Fir1176200ebase to check if the user successfully logged in
+  //This method uses Firebase to check if the user successfully logged in
     final formState = formKey.currentState;
     if(formState.validate()){
       formState.save();
