@@ -18,8 +18,12 @@ class _HomePageState extends State<HomePage> {
 
             new UserAccountsDrawerHeader(
               //style: new TextStyle(color: Colors.black),
-              accountName: new Text("Brother Montgomery"),
-              accountEmail: new Text("Brother@gmail.com"),
+              accountName: new Text("Brother Montgomery",
+                style: TextStyle(color: Colors.black.withOpacity(1.0)),
+              ),
+              accountEmail: new Text("Brother@gmail.com",
+                style: TextStyle(color: Colors.black.withOpacity(1.0)),
+              ),
               currentAccountPicture: new GestureDetector(
                 onTap: () => print("test"),
                 child: new CircleAvatar(
@@ -36,15 +40,15 @@ class _HomePageState extends State<HomePage> {
             ),
 
             new ListTile(
-              title: new Text("First page"),
+              title: new Text("Resturant Floor"),
               trailing: new Icon(Icons.arrow_upward),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
 
            new ListTile(
-              title: new Text("Second page"),
+              title: new Text("Employees"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder:(BuildContext context) => new OtherPage("Second Page"))) ,
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
             
             new Divider(),
