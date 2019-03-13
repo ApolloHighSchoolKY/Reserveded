@@ -8,7 +8,7 @@ class TablePage extends StatelessWidget{
       body: new Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new AssetImage("assests/layouts/luketables.png"),
+            image: new AssetImage("assets/Layouts/luketables.png"),
             fit: BoxFit.cover,
           ),
         ),
