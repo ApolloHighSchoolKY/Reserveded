@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './other_page.dart';
 import 'table_page.dart';
+import './employee_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
 
            new ListTile(
               title: new Text("Employees"),
-              trailing: new Icon(Icons.arrow_right),
+              trailing: new Icon(Icons.arrow_upward),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
             
@@ -55,12 +56,23 @@ class _HomePageState extends State<HomePage> {
 
             new ListTile(
               title: new Text("Close"),
-              trailing: new Icon(Icons.cancel),
+              trailing: new Icon(Icons.arrow_left),
               onTap: () => Navigator.of(context).pop(),
-            )
+            ),
+
+            new ListTile(
+              title: new Text("Sign Out"),
+              trailing: new Icon(Icons.cancel),
+              onTap: (){
+                UserManagement().SignOut();
+              }
+            ),
           ],
         ),
+        
       ),
+
+      
       body: new Center(
         child: new Text("HomePage"),
       ),
