@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './other_page.dart';
+//import './other_page.dart';
 import 'table_page.dart';
 
 class HomePage extends StatefulWidget {
