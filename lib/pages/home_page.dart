@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'table_page.dart';
-import './employee_page.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
               title: new Text("Sign Out"),
               trailing: new Icon(Icons.cancel),
               onTap: (){
-                UserManagement().SignOut();
+                
               }
             ),
           ],
