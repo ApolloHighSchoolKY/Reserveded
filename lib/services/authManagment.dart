@@ -23,8 +23,5 @@ class UserManagement{
  SignOut(){
    FirebaseAuth.instance.signOut();
  }
- 
-
-
 }
 
