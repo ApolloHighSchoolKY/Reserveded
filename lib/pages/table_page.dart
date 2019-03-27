@@ -21,7 +21,7 @@ class TablePage extends StatefulWidget{
 class _TablePageState extends State<TablePage>{
   @override
   Widget build(BuildContext context){
-    MediaQueryData queryData = MediaQuery.of(context);
+    //MediaQueryData queryData = MediaQuery.of(context);
     return new Stack(
       children: <Widget>[ 
         new Container(
