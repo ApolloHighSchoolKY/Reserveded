@@ -13,6 +13,7 @@ class Reserved extends StatelessWidget{
         child: new Scaffold(
           appBar: new AppBar(
             title: new Text("Please Login"),
+            backgroundColor: PrimaryColor,
           ),
           body:new LandingPage(),
         ),
