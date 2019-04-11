@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'pages/landing_page.dart';
 
 void main() => runApp(Reserved());
+const PrimaryColor = const Color(0x8C0004);
 
 class Reserved extends StatelessWidget{
 @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title:"Reserved",
-      color: Colors.red,
+      theme: ThemeData(primarySwatch: Colors.red),
       home: new Center(
         child: new Scaffold(
           appBar: new AppBar(

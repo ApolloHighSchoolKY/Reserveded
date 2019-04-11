@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import './other_page.dart';
 import 'table_page.dart';
+import 'employee_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
            new ListTile(
               title: new Text("Employees"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TileApp())),
             ),
             
             new Divider(),
