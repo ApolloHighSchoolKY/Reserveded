@@ -11,6 +11,7 @@ bool tableSevenOpen = true;
 bool tableEightOpen = true;
 bool tableNineOpen = true;
 bool tableTenOpen = true;
+var tableTimerOne = new Stopwatch();
 
 //The actual building of the table page
 class TablePage extends StatefulWidget{
@@ -31,6 +32,11 @@ class _TablePageState extends State<TablePage>{
           ),
         ),
         new Positioned(
+          left: 570.0,
+          top: 525.0,
+          child: new Text("${tableTimerOne.elapsedMilliseconds}"),
+        ),
+        new Positioned(
           //Table 1
           left: 78.0,
           top: 58.0,
@@ -40,6 +46,13 @@ class _TablePageState extends State<TablePage>{
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableOneOpen = !tableOneOpen);
+                if (tableOneOpen == false) {
+                  tableTimerOne.start();
+                }
+                else if (tableOneOpen == true){
+                  tableTimerOne.stop();
+                  tableTimerOne.reset();
+                }
               },
               child: Text('4'),
               color: tableOneOpen ? Colors.greenAccent: Colors.redAccent,

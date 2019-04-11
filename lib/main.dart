@@ -8,6 +8,7 @@ class Reserved extends StatelessWidget{
   Widget build(BuildContext context) {
     return new MaterialApp(
       title:"Reserved",
+      color: Colors.red,
       home: new Center(
         child: new Scaffold(
           appBar: new AppBar(
