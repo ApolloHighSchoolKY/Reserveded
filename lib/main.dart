@@ -8,7 +8,7 @@ class Reserved extends StatelessWidget{
 @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title:"Reserved",
+      theme: ThemeData(primarySwatch: Colors.red),
       home: new Center(
         child: new Scaffold(
           appBar: new AppBar(

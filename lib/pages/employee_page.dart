@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TileApp extends StatelessWidget {
+class EmployeePage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return new MaterialApp(
-      home: new Scaffold(
+    return new Scaffold(
         appBar: new AppBar(
           title: new Center(
             child: new Text("Employee Table"),
@@ -18,9 +17,8 @@ class TileApp extends StatelessWidget {
         ),
 
 
-      ),
-    );
-  }
+      );
+    }
 }
 
 class StuffInTiles extends StatelessWidget{
@@ -53,10 +51,12 @@ class MyTile{
 
 List<MyTile> listOfTiles = <MyTile>[
   new MyTile(
-    'John',
+    'Bus Boy',
     <MyTile>[
       new MyTile(
         'Ben'
+        'Jacob'
+        'Nathan'
       )
     ]
   )

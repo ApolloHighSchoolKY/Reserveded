@@ -54,7 +54,7 @@ class _LandingPageState extends State<LandingPage>{
             ),
             RaisedButton(
               child: Text("Login"),
-              color: Colors.blueAccent,
+              color: Colors.redAccent,
               onPressed: checkLogin,
             )    
         ],
