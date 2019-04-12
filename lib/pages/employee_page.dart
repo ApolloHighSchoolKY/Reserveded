@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TileApp extends StatelessWidget {
+class EmployeePage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return new Scaffold(
@@ -51,10 +51,12 @@ class MyTile{
 
 List<MyTile> listOfTiles = <MyTile>[
   new MyTile(
-    'John',
+    'Bus Boy',
     <MyTile>[
       new MyTile(
         'Ben'
+        'Jacob'
+        'Nathan'
       )
     ]
   )
