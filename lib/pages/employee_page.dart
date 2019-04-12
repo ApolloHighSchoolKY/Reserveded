@@ -53,11 +53,9 @@ List<MyTile> listOfTiles = <MyTile>[
   new MyTile(
     'Bus Boy',
     <MyTile>[
-      new MyTile(
-        'Ben'
-        'Jacob'
-        'Nathan'
-      )
+      new MyTile('Ben'),
+      new MyTile('John'),
+      new MyTile('Jacob')
     ]
   )
 ];
