@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             //Manager Only
            new ListTile(
               title: new Text("Employees"),
+<<<<<<< HEAD
               trailing: new Icon(Icons.arrow_upward),
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EmployeePage())),
             ),
@@ -67,6 +68,10 @@ class _HomePageState extends State<HomePage> {
               title: new Text("Messages"),
               trailing: new Icon(Icons.arrow_upward),
               //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
+=======
+              trailing: new Icon(Icons.arrow_right),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TileApp())),
+>>>>>>> a07f0c11e0b8137d3f9ea87eb42474cc0451c2e1
             ),
 
             
