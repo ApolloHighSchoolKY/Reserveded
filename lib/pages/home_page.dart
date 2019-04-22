@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-//import './other_page.dart';
+import 'statistics_page.dart';
 import 'table_page.dart';
 import 'employee_page.dart';
+
+List<int> averageTable = [];
 
 class HomePage extends StatefulWidget {
   @override
@@ -58,7 +60,7 @@ class _HomePageState extends State<HomePage> {
             new ListTile(
               title: new Text("Statistics"),
               trailing: new Icon(Icons.arrow_upward),
-              //5onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StatisticsPage())),
             ),
 
             //A messaging platform for communication between workers

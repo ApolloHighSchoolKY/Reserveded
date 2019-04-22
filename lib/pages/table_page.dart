@@ -15,6 +15,9 @@ var tableTimerOne = new Stopwatch();
 
 //The actual building of the table page
 class TablePage extends StatefulWidget{
+  final String value;
+  TablePage({Key key, this.value}) : super (key: key);
+  
   @override
   _TablePageState createState() => new _TablePageState();
 }
@@ -22,15 +25,17 @@ class TablePage extends StatefulWidget{
 class _TablePageState extends State<TablePage>{
   @override
   Widget build(BuildContext context){
-    //MediaQueryData queryData = MediaQuery.of(context);
-    return new Stack(
-      children: <Widget>[ 
-        new Container(
-          child: new Image.asset(
-            'assets/Layouts/luketables.png',
-            fit: BoxFit.fill,
+    //MediaQueryData queryData = MediaQuery.of(context);   
+    return new Scaffold( 
+      appBar: new AppBar(title: new Text("Floorplan"),),
+      body: Stack(
+        children: <Widget>[ 
+          new Container(
+            child: new Image.asset(
+              'assets/Layouts/luketables.png',
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
         new Positioned(
           left: 570.0,
           top: 700.0,
@@ -139,71 +144,72 @@ class _TablePageState extends State<TablePage>{
             )
           )
         ),
-        new Positioned(
-          //table 7
-          left: 320.0,
-          top: 725.0,
-          child: ButtonTheme(
-            minWidth: 210.0,
-            height: 190.0,
-            child: RaisedButton(
-              onPressed: (){
-                setState(() => tableSevenOpen = !tableSevenOpen);
-              },
-              child: Text('6'),
-              color: tableSevenOpen ? Colors.greenAccent: Colors.redAccent,
+          new Positioned(
+            //table 7
+            left: 320.0,
+            top: 725.0,
+            child: ButtonTheme(
+              minWidth: 210.0,
+              height: 190.0,
+              child: RaisedButton(
+                onPressed: (){
+                  setState(() => tableSevenOpen = !tableSevenOpen);
+                },
+                child: Text('6'),
+                color: tableSevenOpen ? Colors.greenAccent: Colors.redAccent,
+              )
             )
-          )
-        ),
-        new Positioned(
-          //table 8
-          left: 570.0,
-          top: 70.0,
-          child: ButtonTheme(
-            minWidth: 140.0,
-            height: 140.0,
-            child: RaisedButton(
-              onPressed: (){
-                setState(() => tableEightOpen = !tableEightOpen);
-              },
-              child: Text('4'),
-              color: tableEightOpen ? Colors.greenAccent: Colors.redAccent,
+          ),
+          new Positioned(
+            //table 8
+            left: 570.0,
+            top: 70.0,
+            child: ButtonTheme(
+              minWidth: 140.0,
+              height: 140.0,
+              child: RaisedButton(
+                onPressed: (){
+                  setState(() => tableEightOpen = !tableEightOpen);
+                },
+                child: Text('4'),
+                color: tableEightOpen ? Colors.greenAccent: Colors.redAccent,
+              )
             )
-          )
-        ),
-        new Positioned(
-          //table 9
-          left: 570.0,
-          top: 305.0,
-          child: ButtonTheme(
-            minWidth: 132.0,
-            height: 145.0,
-            child: RaisedButton(
-              onPressed: (){
-                setState(() => tableNineOpen = !tableNineOpen);
-              },
-              child: Text('4'),
-              color: tableNineOpen ? Colors.greenAccent: Colors.redAccent,
+          ),
+          new Positioned(
+            //table 9
+            left: 570.0,
+            top: 305.0,
+            child: ButtonTheme(
+              minWidth: 132.0,
+              height: 145.0,
+              child: RaisedButton(
+                onPressed: (){
+                  setState(() => tableNineOpen = !tableNineOpen);
+                },
+                child: Text('4'),
+                color: tableNineOpen ? Colors.greenAccent: Colors.redAccent,
+              )
             )
-          )
-        ),
-        new Positioned(
-          //table 10
-          left: 568.0,
-          top: 550.0,
-          child: ButtonTheme(
-            minWidth: 135.0,
-            height: 130.0,
-            child: RaisedButton(
-              onPressed: (){
-                setState(() => tableTenOpen = !tableTenOpen);
-              },
-              child: Text('4'),
-              color: tableTenOpen ? Colors.greenAccent: Colors.redAccent,
+          ),
+          new Positioned(
+            //table 10
+            left: 568.0,
+            top: 550.0,
+            child: ButtonTheme(
+              minWidth: 135.0,
+              height: 130.0,
+              child: RaisedButton(
+                onPressed: (){
+                  setState(() => tableTenOpen = !tableTenOpen);
+                },
+                child: Text('4'),
+                color: tableTenOpen ? Colors.greenAccent: Colors.redAccent,
+              )
             )
-          )
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 }
