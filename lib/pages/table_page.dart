@@ -33,8 +33,8 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           left: 570.0,
-          top: 525.0,
-          child: new Text("${tableTimerOne.elapsedMilliseconds}",),
+          top: 700.0,
+          child: new Text("${tableTimerOne.elapsed.inMinutes}"),
         ),
         new Positioned(
           //Table 1

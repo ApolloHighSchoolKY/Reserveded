@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
             new ListTile(
               title: new Text("Statistics"),
               trailing: new Icon(Icons.arrow_upward),
-              //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
+              //5onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
             ),
 
             //A messaging platform for communication between workers
