@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'statistics_page.dart';
 import 'table_page.dart';
 import 'employee_page.dart';
+//import 'add_page.dart';
 
 List<int> averageTable = [];
 
@@ -66,9 +67,9 @@ class _HomePageState extends State<HomePage> {
             //A messaging platform for communication between workers
             //Open to all people
            new ListTile(
-              title: new Text("Messages"),
+              title: new Text("Add Employees"),
               trailing: new Icon(Icons.arrow_upward),
-              //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TablePage())),
+              //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Home())),
             ),
 
             

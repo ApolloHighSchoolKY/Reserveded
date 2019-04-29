@@ -1,12 +1,8 @@
 import 'dart:io';
 import 'dart:async';
-
 import 'package:path_provider/path_provider.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-
-
 
 class MyApp extends StatelessWidget {
   @override
@@ -53,8 +49,8 @@ class HomeState extends State<Home> {
     return widget.storage.writeData(state);
   }
 
-  void getAppDirectory() {
-    setState(() {
+  void getAppDirectory(){
+    setState((){
       _appDocDir = getApplicationDocumentsDirectory();
     });
   }
@@ -83,8 +79,7 @@ class HomeState extends State<Home> {
             ),
             FutureBuilder<Directory>(
               future: _appDocDir,
-              builder:
-                  (BuildContext context, AsyncSnapshot<Directory> snapshot) {
+              builder:  (BuildContext context, AsyncSnapshot<Directory> snapshot) {
                 Text text = Text('');
                 if (snapshot.connectionState == ConnectionState.done) {
                   if (snapshot.hasError) {
@@ -107,7 +102,7 @@ class HomeState extends State<Home> {
   }
 }
 
-class Storage {
+class Storage{
   Future<String> get localPath async {
     final dir = await getApplicationDocumentsDirectory();
     return dir.path;
