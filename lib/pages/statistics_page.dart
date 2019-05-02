@@ -17,7 +17,7 @@ class _StatisticsPageState extends State<StatisticsPage>{
       average += tableTime.elementAt(i);
     }
     average = average / (tableTime.length);
-    print ("$average");
+    average = average.truncateToDouble();
   }
   Widget build(BuildContext context){
     return new Scaffold(
