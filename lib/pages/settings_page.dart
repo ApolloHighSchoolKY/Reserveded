@@ -9,10 +9,9 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context){
     return new Scaffold(
         appBar: new AppBar(
-          title: new Center(
-            child: new Text("Employee Table"),
+          title:  new Text("Settings"),
           ),
-        ),
+        
         body: new Container(
            width: 190.0,
            height: 190.0,
@@ -21,7 +20,7 @@ class SettingsPage extends StatelessWidget {
               image: new DecorationImage(
               fit: BoxFit.fill,
               image: new NetworkImage(
-                 "https://i.imgur.com/BoN9kdC.png"
+                 "http://apollopltw.weebly.com/uploads/3/7/7/0/37708467/5799917.jpg?140"
                   )
                 )
               )
