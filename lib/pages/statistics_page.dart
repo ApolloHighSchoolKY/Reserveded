@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'home_page.dart';
+import 'table_page.dart';
 
 List<int> testList = [34, 32, 42, 31, 32, 35, 35, 34, 42, 31];
 double average = 0;
@@ -12,10 +12,11 @@ class StatisticsPage extends StatefulWidget{
 class _StatisticsPageState extends State<StatisticsPage>{
   @override
   void initState(){
-    for (int i = 0; i<testList.length; i++){
-      average += testList.elementAt(i);
+    print ("$tableTime");
+    for (int i = 0; i<tableTime.length; i++){
+      average += tableTime.elementAt(i);
     }
-    average = average / (testList.length);
+    average = average / (tableTime.length);
     print ("$average");
   }
   Widget build(BuildContext context){
@@ -24,19 +25,8 @@ class _StatisticsPageState extends State<StatisticsPage>{
       body: new Column(
         children: <Widget>[
           new Text('Average Table Time: ' + '$average'),
-          new RaisedButton(
-            onPressed: getTableAverage,
-          )
         ], 
       ),
     );
-  }
-  Future<void> getTableAverage(){
-    average = 0;
-    for (int i = 0; i<testList.length; i++){
-      average += testList.elementAt(i);
-    }
-    average = average / (testList.length);
-    print ('$average');
   }
 }

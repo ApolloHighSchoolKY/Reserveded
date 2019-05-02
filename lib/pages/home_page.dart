@@ -1,12 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'statistics_page.dart';
 import 'table_page.dart';
 import 'employee_page.dart';
+import 'landing_page.dart';
 //import 'add_page.dart';
 
-List<int> averageTable = [];
-
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget { 
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
               accountName: new Text("Brother Montgomery",
                 style: TextStyle(color: Colors.black.withOpacity(1.0)),
               ),
-              accountEmail: new Text("Brother@gmail.com",
+              accountEmail: new Text('okay@gottem.com',
                 style: TextStyle(color: Colors.black.withOpacity(1.0)),
               ),
               currentAccountPicture: new GestureDetector(

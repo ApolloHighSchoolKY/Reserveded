@@ -12,6 +12,16 @@ bool tableEightOpen = true;
 bool tableNineOpen = true;
 bool tableTenOpen = true;
 var tableTimerOne = new Stopwatch();
+var tableTimerTwo = new Stopwatch();
+var tableTimerThree = new Stopwatch();
+var tableTimerFour = new Stopwatch();
+var tableTimerFive = new Stopwatch();
+var tableTimerSix = new Stopwatch();
+var tableTimerSeven = new Stopwatch();
+var tableTimerEight = new Stopwatch();
+var tableTimerNine = new Stopwatch();
+var tableTimerTen = new Stopwatch();
+List<int> tableTime = [];
 
 //The actual building of the table page
 class TablePage extends StatefulWidget{
@@ -43,19 +53,23 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //Table 1
-          left: 78.0,
-          top: 58.0,
+          left: 31.0,
+          top: 25.0,
           child: ButtonTheme(
-            minWidth: 120.0,
-            height: 155.0,
+            minWidth: 52.0,
+            height: 64.0,
             child: RaisedButton(
               onPressed: (){
+                //This code and all similar looking code changes the state of the table to
+                //available/unavailable and starts the timer for how long it took for the
+                //table to be served
                 setState(() => tableOneOpen = !tableOneOpen);
                 if (tableOneOpen == false) {
                   tableTimerOne.start();
                 }
                 else if (tableOneOpen == true){
                   tableTimerOne.stop();
+                  tableTime.add(tableTimerOne.elapsed.inSeconds);
                   tableTimerOne.reset();
                 }
               },
@@ -66,14 +80,22 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //table 2
-          left: 75.0,
-          top: 306.0,
+          left: 30.0,
+          top: 130.0,
           child: ButtonTheme(
-            minWidth: 115.0,
-            height: 132.0,
+            minWidth: 50.0,
+            height: 53.0,
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableTwoOpen = !tableTwoOpen);
+                if (tableTwoOpen == false) {
+                  tableTimerTwo.start();
+                }
+                else if (tableTwoOpen == true){
+                  tableTimerTwo.stop();
+                  tableTime.add(tableTimerTwo.elapsed.inSeconds);
+                  tableTimerTwo.reset();
+                }
               },
               child: Text('4'),
               color: tableTwoOpen ? Colors.greenAccent: Colors.redAccent,
@@ -82,14 +104,22 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //table 3
-          left: 72.0,
-          top: 529.0,
+          left: 27.0,
+          top: 220.0,
           child: ButtonTheme(
-            minWidth: 114.0,
-            height: 116.0,
+            minWidth: 52.0,
+            height: 54.0,
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableThreeOpen = !tableThreeOpen);
+                if (tableThreeOpen == false) {
+                  tableTimerThree.start();
+                }
+                else if (tableThreeOpen == true){
+                  tableTimerThree.stop();
+                  tableTime.add(tableTimerThree.elapsed.inSeconds);
+                  tableTimerThree.reset();
+                }
               },
               child: Text('4'),
               color: tableThreeOpen ? Colors.greenAccent: Colors.redAccent,
@@ -98,14 +128,22 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //table 4
-          left: 70.0,
-          top: 830.0,
+          left: 25.0,
+          top: 350.0,
           child: ButtonTheme(
-            minWidth: 97.0,
-            height: 132.0,
+            minWidth: 45.0,
+            height: 55.0,
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableFourOpen = !tableFourOpen);
+                if (tableFourOpen == false) {
+                  tableTimerFour.start();
+                }
+                else if (tableFourOpen == true){
+                  tableTimerFour.stop();
+                  tableTime.add(tableTimerFour.elapsed.inSeconds);
+                  tableTimerFour.reset();
+                }
               },
               child: Text('4'),
               color: tableFourOpen ? Colors.greenAccent: Colors.redAccent,
@@ -114,14 +152,22 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //table 5
-          left: 300.0,
-          top: 90.0,
+          left: 125.0,
+          top: 40.0,
           child: ButtonTheme(
-            minWidth: 197.0,
-            height: 155.0,
+            minWidth: 80.0,
+            height: 70.0,
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableFiveOpen = !tableFiveOpen);
+                if (tableFiveOpen == false) {
+                  tableTimerFive.start();
+                }
+                else if (tableFiveOpen == true){
+                  tableTimerFive.stop();
+                  tableTime.add(tableTimerFive.elapsed.inSeconds);
+                  tableTimerFive.reset();
+                }
               },
               child: Text('6'),
               color: tableFiveOpen ? Colors.greenAccent: Colors.redAccent,
@@ -130,14 +176,22 @@ class _TablePageState extends State<TablePage>{
         ),
         new Positioned(
           //table 6
-          left: 360.0,
-          top: 345.0,
+          left: 150.0,
+          top: 150.0,
           child: ButtonTheme(
-            minWidth: 130.0,
-            height: 270.0,
+            minWidth: 60.0,
+            height: 115.0,
             child: RaisedButton(
               onPressed: (){
                 setState(() => tableSixOpen = !tableSixOpen);
+                if (tableSixOpen == false) {
+                  tableTimerSix.start();
+                }
+                else if (tableSixOpen == true){
+                  tableTimerSix.stop();
+                  tableTime.add(tableTimerSix.elapsed.inSeconds);
+                  tableTimerSix.reset();
+                }
               },
               child: Text('8'),
               color: tableSixOpen ? Colors.greenAccent: Colors.redAccent,
@@ -146,14 +200,22 @@ class _TablePageState extends State<TablePage>{
         ),
           new Positioned(
             //table 7
-            left: 320.0,
-            top: 725.0,
+            left: 130.0,
+            top: 300.0,
             child: ButtonTheme(
-              minWidth: 210.0,
-              height: 190.0,
+              minWidth: 90.0,
+              height: 90.0,
               child: RaisedButton(
                 onPressed: (){
                   setState(() => tableSevenOpen = !tableSevenOpen);
+                  if (tableSevenOpen == false) {
+                    tableTimerSeven.start();
+                  }
+                  else if (tableSevenOpen == true){
+                    tableTimerSeven.stop();
+                    tableTime.add(tableTimerSeven.elapsed.inSeconds);
+                    tableTimerSeven.reset();
+                  }
                 },
                 child: Text('6'),
                 color: tableSevenOpen ? Colors.greenAccent: Colors.redAccent,
@@ -162,14 +224,22 @@ class _TablePageState extends State<TablePage>{
           ),
           new Positioned(
             //table 8
-            left: 570.0,
-            top: 70.0,
+            left: 240.0,
+            top: 30.0,
             child: ButtonTheme(
-              minWidth: 140.0,
-              height: 140.0,
+              minWidth: 60.0,
+              height: 60.0,
               child: RaisedButton(
                 onPressed: (){
                   setState(() => tableEightOpen = !tableEightOpen);
+                  if (tableEightOpen == false) {
+                    tableTimerEight.start();
+                  }
+                  else if (tableEightOpen == true){
+                    tableTimerEight.stop();
+                    tableTime.add(tableTimerEight.elapsed.inSeconds);
+                    tableTimerEight.reset();
+                  }
                 },
                 child: Text('4'),
                 color: tableEightOpen ? Colors.greenAccent: Colors.redAccent,
@@ -178,14 +248,22 @@ class _TablePageState extends State<TablePage>{
           ),
           new Positioned(
             //table 9
-            left: 570.0,
-            top: 305.0,
+            left: 240.0,
+            top: 130.0,
             child: ButtonTheme(
-              minWidth: 132.0,
-              height: 145.0,
+              minWidth: 60.0,
+              height: 60.0,
               child: RaisedButton(
                 onPressed: (){
                   setState(() => tableNineOpen = !tableNineOpen);
+                  if (tableNineOpen == false) {
+                    tableTimerNine.start();
+                  }
+                  else if (tableNineOpen == true){
+                    tableTimerNine.stop();
+                    tableTime.add(tableTimerNine.elapsed.inSeconds);
+                    tableTimerNine.reset();
+                  }
                 },
                 child: Text('4'),
                 color: tableNineOpen ? Colors.greenAccent: Colors.redAccent,
@@ -194,14 +272,22 @@ class _TablePageState extends State<TablePage>{
           ),
           new Positioned(
             //table 10
-            left: 568.0,
-            top: 550.0,
+            left: 240.0,
+            top: 230.0,
             child: ButtonTheme(
-              minWidth: 135.0,
-              height: 130.0,
+              minWidth: 60.0,
+              height: 60.0,
               child: RaisedButton(
                 onPressed: (){
                   setState(() => tableTenOpen = !tableTenOpen);
+                  if (tableTenOpen == false) {
+                    tableTimerTen.start();
+                  }
+                  else if (tableTenOpen == true){
+                    tableTimerTen.stop();
+                    tableTime.add(tableTimerTen.elapsed.inSeconds);
+                    tableTimerTen.reset();
+                  }
                 },
                 child: Text('4'),
                 color: tableTenOpen ? Colors.greenAccent: Colors.redAccent,
