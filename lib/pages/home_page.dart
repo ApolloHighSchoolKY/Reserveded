@@ -5,6 +5,7 @@ import 'table_page.dart';
 import 'employee_page.dart';
 import 'landing_page.dart';
 //import 'add_page.dart';
+import 'settings_page.dart';
 
 class HomePage extends StatefulWidget { 
   @override
@@ -15,13 +16,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold( 
-      appBar: new AppBar(title: new Text("Drawer App"),),
+      appBar: new AppBar(title: new Text("Welcome"),),
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
 
             new UserAccountsDrawerHeader(
-              //style: new TextStyle(color: Colors.black),
               accountName: new Text("Brother Montgomery",
                 style: TextStyle(color: Colors.black.withOpacity(1.0)),
               ),
@@ -72,7 +72,14 @@ class _HomePageState extends State<HomePage> {
               //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Home())),
             ),
 
-            
+            new Divider(),
+
+            new ListTile(
+              title: new Text("Settings"),
+              trailing: new Icon(Icons.arrow_upward),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage())),
+            ),
+         
             new Divider(),
 
             //Will close the drawer 
